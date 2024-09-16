@@ -365,3 +365,7 @@ Dalam `.\resources\views\component\table.blade.php`
 	</div>
 </section>
 ```
+8. Membuat create form basic
+```shell
+gw udah capek mau tidur honk shuu
+```
