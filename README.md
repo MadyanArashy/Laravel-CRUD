@@ -235,7 +235,6 @@ class ExampleModelController extends Controller
 4. Membuat folder bebas (Contoh: .\view\exampleApp\)
 5. Membuat view index
 ```php
-```php
 <x-layout>
 <x-table>
 @forelse($exampleModels as  $row)
@@ -268,6 +267,4 @@ class ExampleModelController extends Controller
 @endforelse
 </x-table>
 </x-layout>
-```
-
 ```
