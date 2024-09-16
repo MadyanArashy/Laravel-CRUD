@@ -1,5 +1,6 @@
 # Step-by-step CRUD Laravel 
-### Catat untuk PTS praktik produktif RPL
+## Catatan untuk PTS praktik produktif RPL
+### BAB I: Precode
  1. Dalam directory `./laragon/www/`
 ```bash
 composer create-project laravel/laravel example-project
@@ -50,3 +51,42 @@ import('flowbite');
  ```bash
  npm run dev
  ```
+
+### Bab II: code
+1. Membuat **Model, Migration & Controller** bebas
+```bash
+php artisan make:model exampleModel -mcr
+```
+2. Setup **Model & Migration**
+Migration:
+```php
+<?php
+use  Illuminate\Database\Migrations\Migration;
+use  Illuminate\Database\Schema\Blueprint;
+use  Illuminate\Support\Facades\Schema;
+
+return  new  class  extends  Migration
+{
+	/**
+	* Run the migrations.
+	*/
+	public  function  up():  void
+	{
+	Schema::create('exampleModel',  function  (Blueprint  $table)  {
+		$table->id();
+		$table->timestamps();
+		$table->string('name');
+		$table->string('class');
+		$table->date('date_of_birth');
+		$table->string('image')->nullable();
+	});
+}
+/**
+* Reverse the migrations.
+*/
+public  function  down():  void
+{
+Schema::dropIfExists('exampleModel');
+}
+};
+```
