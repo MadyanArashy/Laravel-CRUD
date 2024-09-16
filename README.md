@@ -57,7 +57,7 @@ import('flowbite');
 ```bash
 php artisan make:model exampleModel -mcr
 ```
-2. Setup **Model & Migration**
+2. Setup **Model & Migration**  
 Migration:
 ```php
 <?php
@@ -76,8 +76,9 @@ return  new  class  extends  Migration
 		$table->id();
 		$table->timestamps();
 		$table->string('name');
-		$table->string('class');
-		$table->date('date_of_birth');
+		$table->text('desc');
+		$table->integer('stock');
+		$table->date('expired_date');
 		$table->string('image')->nullable();
 	});
 }
@@ -89,4 +90,28 @@ public  function  down():  void
 Schema::dropIfExists('exampleModel');
 }
 };
+```
+Model:
+```php
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use App\Factories\StudentFactory;
+
+class student extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'text',
+        'stock',
+	'expired_date',
+        'image'
+    ];
+}
+
 ```
