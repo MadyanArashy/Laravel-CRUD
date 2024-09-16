@@ -43,7 +43,7 @@ module.exports = {
 ```javascript
 import('flowbite');
 ```
-8. Di dalam tag <head></head> masukkan app.css dan app.js dengan Vite
+8. Di dalam tag `<head></head>` masukkan app.css dan app.js dengan Vite
 ```js
 @vite(['resources/css/app.css','resources/js/app.js'])
 ```
