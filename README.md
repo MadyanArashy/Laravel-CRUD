@@ -6,17 +6,18 @@
 composer create-project laravel/laravel example-project
 ```
 2. Buat database dengan nama bebas (contoh: db_crud_madyan)
-3. Dalam terminal proyekmu jalankan 
+3. Dalam `.env` ubah database config
+4. Dalam terminal proyekmu jalankan 
 ```bash
 php artisan migrate
 php artisan serve
 ```
-4. Dalam terminal download semua plugin yang perlu (tailwindcss + flowbite) kemudian buat tailwind config file
+5. Dalam terminal download semua plugin yang perlu (tailwindcss + flowbite) kemudian buat tailwind config file
 ```bash
 npm install -D tailwindcss postcss autoprefixer flowbite
 npx tailwindcss init -p
 ```
-5. Di dalam file `tailwind.config.js` masukkan
+6. Di dalam file `tailwind.config.js` masukkan
 ```javascript
 module.exports = {
     content: [
@@ -33,21 +34,21 @@ module.exports = {
     ],
   }
 ```
-6. Di dalam file `./resources/css/app.css`
+7. Di dalam file `./resources/css/app.css`
 ```css
 @tailwind base;  
 @tailwind components;  
 @tailwind utilities;  
 ```
-7. Insert Flowbite (atau plugin lain) dalam `./resources/js/app.js`
+8. Insert Flowbite (atau plugin lain) dalam `./resources/js/app.js`
 ```javascript
 import('flowbite');
 ```
-8. Di dalam tag `<head></head>` masukkan app.css dan app.js dengan Vite
+9. Di dalam tag `<head></head>` masukkan app.css dan app.js dengan Vite
 ```js
 @vite(['resources/css/app.css','resources/js/app.js'])
 ```
-9. Dalam terminal proyekmu jalankan 
+10. Dalam terminal proyekmu jalankan 
  ```bash
  npm run dev
  ```
